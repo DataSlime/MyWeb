@@ -3,125 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人作品集 | Portfolio</title>
+    <title>Dataslime | Web</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #333;
+            --bg-color: #fdfaf5;     /* 極淺奶油底色 */
+            --header-bg: #e6dfd1;  /* 奶茶色標頭 */
+            --header-text: #5d4037; /* 深咖啡色文字 */
+            --card-bg: #ffffff;     /* 卡片純白底色 */
+            --card-border: #d7ccc8; /* 卡片細邊框色 */
+            --text-main: #3e2723;   /* 卡片主文字色 */
+            --text-date: #8d6e63;   /* 日期淺色文字 */
+            --accent: #bcaaa4;     /* 懸停時的卡片底色 (淺可可) */
+            --hover-border: #a1887f; /* 懸停時的卡片邊框色 */
         }
+        
         body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-color);
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        header {
-            background: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        section {
+
+        /* 頂部 Welcome 區域 */
+        .main-container {
+            width: 90%;
+            max-width: 600px; /* 控制整體寬度，符合草圖的緊湊感 */
             background: white;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(93, 64, 55, 0.08); /* 淡淡的大地色陰影 */
+            margin: 40px auto;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
         }
-        h2 {
-            border-left: 5px solid var(--accent-color);
-            padding-left: 10px;
-            color: var(--primary-color);
-        }
-        .skill-tag {
-            display: inline-block;
-            background: #e1f5fe;
-            color: #01579b;
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 0.9rem;
-        }
-        .project {
-            margin-bottom: 1.5rem;
-        }
-        .project-title {
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-        footer {
+
+        .header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 30px 20px;
             text-align: center;
-            padding: 2rem;
-            color: #777;
+            border-bottom: 2px solid var(--card-border);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* 卡片網格區域 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 兩列 */
+            gap: 20px; /* 卡片間距 */
+            padding: 40px; /* 內縮 */
+        }
+
+        /* 可點擊的卡片樣式 */
+        .project-card {
+            background: var(--card-bg);
+            border: 2px solid var(--card-border); /* 符合草圖的粗邊線感 */
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            aspect-ratio: 1 / 1; /* 保持正方形 */
+            cursor: pointer;
+            text-decoration: none; /* 去除超連結下劃線 */
+            transition: all 0.3s ease; /* 變色的過渡效果 */
+            box-sizing: border-box; /* 確保 padding 不影響尺寸 */
+        }
+
+        /* 滑鼠懸停時的變色效果 (變色、微陰影) */
+        .project-card:hover {
+            background-color: var(--accent); /* 卡片變色 */
+            border-color: var(--hover-border); /* 邊框變色 */
+            transform: translateY(-3px); /* 向上微浮動，增加互動感 */
+            box-shadow: 0 5px 15px rgba(141, 110, 99, 0.2);
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .update-label {
+            font-size: 0.85rem;
+            color: var(--text-date);
+            font-weight: 400;
+            margin: 2px 0;
+        }
+
+        .update-date {
+            font-size: 0.85rem;
+            color: var(--text-date);
+            font-weight: 600; /* 日期加粗 */
+        }
+
+        /* 手機版優化 */
+        @media (max-width: 500px) {
+            .card-grid {
+                padding: 20px;
+                gap: 15px;
+            }
+            .header h1 { font-size: 1.5rem; }
+            .project-title { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>我的個人作品集</h1>
-    <p>資訊工程系 | 行動應用開發 | 資安研究</p>
-</header>
+<div class="main-container">
+    <div class="header">
+        <h1>Welcome to My Web</h1>
+    </div>
 
-<div class="container">
-    <section>
-        <h2>關於我 (About Me)</h2>
-        <p>
-            我是目前就讀資工系的大四學生，專注於行動裝置 App 開發與資訊安全研究。
-            具備四年的軍旅生涯經驗，養成了高度的自律與執行力。目前正積極準備資訊管理類公職考試，
-            同時致力於開發實用的技術專案。
-        </p>
-    </section>
+    <div class="card-grid">
+        <a href="###" class="project-card">
+            <div class="project-title">Hacking Note</div>
+            <div class="update-label">Last Update:</div>
+            <div class="update-date">dd/mm/yyyy</div>
+        </a>
 
-    <section>
-        <h2>專業技能 (Skills)</h2>
-        <div>
-            <span class="skill-tag">Android (Kotlin)</span>
-            <span class="skill-tag">iOS (Swift)</span>
-            <span class="skill-tag">Flutter</span>
-            <span class="skill-tag">Cybersecurity</span>
-            <span class="skill-tag">C++ / Python</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Linux / Ubuntu</span>
-        </div>
-    </section>
+        <a href="###" class="project-card">
+            <div class="project-title">Side Project</div>
+            <div class="update-label">Last Update:</div>
+            <div class="update-date">dd/mm/yyyy</div>
+        </a>
 
-    <section>
-        <h2>專案經驗 (Projects)</h2>
-        <div class="project">
-            <div class="project-title">美食推薦行動應用程式 (Food Recommendation App)</div>
-            <p>使用 Kotlin 開發前端，整合 Socket.io 與 OkHttp 實現即時店家資訊快取與檢索。</p>
-        </div>
-        <div class="project">
-            <div class="project-title">紅隊技術研究 - 加密工具 (C++ Encryption Tool)</div>
-            <p>實作自定義位元運算（XOR）與字串處理，研究資訊加解密原理與應用。</p>
-        </div>
-        <div class="project">
-            <div class="project-title">自動化數據爬蟲 (Serebii Web Crawler)</div>
-            <p>基於 Docker 環境，使用 Python 開發爬蟲程式抓取數據，並整合 PostgreSQL 資料庫。</p>
-        </div>
-    </section>
+        <a href="###" class="project-card">
+            <div class="project-title">Small Project</div>
+            <div class="update-label">Last Update:</div>
+            <div class="update-date">dd/mm/yyyy</div>
+        </a>
 
-    <section>
-        <h2>教育與經驗 (Education & Experience)</h2>
-        <ul>
-            <li>私立大學 資訊工程系（預計 2027 年畢業）</li>
-            <li>中華民國陸軍 機械化步兵 (服務四年)</li>
-        </ul>
-    </section>
+        <a href="###" class="project-card">
+            <div class="project-title">Packet Project</div>
+            <div class="update-label">Last Update:</div>
+            <div class="update-date">dd/mm/yyyy</div>
+        </a>
+
+        <a href="###" class="project-card">
+            <div class="project-title">Work</div>
+            <div class="update-label">Last Update:</div>
+            <div class="update-date">dd/mm/yyyy</div>
+        </a>
+
+    </div>
 </div>
-
-<footer>
-    <p>&copy; 2026 My Portfolio. Built with GitHub Pages.</p>
-</footer>
 
 </body>
 </html>
