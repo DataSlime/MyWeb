@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人作品集 | Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+        }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+        }
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            color: var(--primary-color);
+        }
+        .skill-tag {
+            display: inline-block;
+            background: #e1f5fe;
+            color: #01579b;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        .project {
+            margin-bottom: 1.5rem;
+        }
+        .project-title {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>我的個人作品集</h1>
+    <p>資訊工程系 | 行動應用開發 | 資安研究</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2>關於我 (About Me)</h2>
+        <p>
+            我是目前就讀資工系的大四學生，專注於行動裝置 App 開發與資訊安全研究。
+            具備四年的軍旅生涯經驗，養成了高度的自律與執行力。目前正積極準備資訊管理類公職考試，
+            同時致力於開發實用的技術專案。
+        </p>
+    </section>
+
+    <section>
+        <h2>專業技能 (Skills)</h2>
+        <div>
+            <span class="skill-tag">Android (Kotlin)</span>
+            <span class="skill-tag">iOS (Swift)</span>
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">Cybersecurity</span>
+            <span class="skill-tag">C++ / Python</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Linux / Ubuntu</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>專案經驗 (Projects)</h2>
+        <div class="project">
+            <div class="project-title">美食推薦行動應用程式 (Food Recommendation App)</div>
+            <p>使用 Kotlin 開發前端，整合 Socket.io 與 OkHttp 實現即時店家資訊快取與檢索。</p>
+        </div>
+        <div class="project">
+            <div class="project-title">紅隊技術研究 - 加密工具 (C++ Encryption Tool)</div>
+            <p>實作自定義位元運算（XOR）與字串處理，研究資訊加解密原理與應用。</p>
+        </div>
+        <div class="project">
+            <div class="project-title">自動化數據爬蟲 (Serebii Web Crawler)</div>
+            <p>基於 Docker 環境，使用 Python 開發爬蟲程式抓取數據，並整合 PostgreSQL 資料庫。</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>教育與經驗 (Education & Experience)</h2>
+        <ul>
+            <li>私立大學 資訊工程系（預計 2027 年畢業）</li>
+            <li>中華民國陸軍 機械化步兵 (服務四年)</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 My Portfolio. Built with GitHub Pages.</p>
+</footer>
+
+</body>
+</html>
