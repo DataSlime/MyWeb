@@ -6,114 +6,118 @@
     <title>Dataslime | Web</title>
     <style>
         :root {
-            --bg-color: #fdfaf5;     /* 極淺奶油底色 */
-            --header-bg: #e6dfd1;  /* 奶茶色標頭 */
-            --header-text: #5d4037; /* 深咖啡色文字 */
-            --card-bg: #ffffff;     /* 卡片純白底色 */
-            --card-border: #d7ccc8; /* 卡片細邊框色 */
-            --text-main: #3e2723;   /* 卡片主文字色 */
-            --text-date: #8d6e63;   /* 日期淺色文字 */
-            --accent: #bcaaa4;     /* 懸停時的卡片底色 (淺可可) */
-            --hover-border: #a1887f; /* 懸停時的卡片邊框色 */
+            /* 深度奶茶與咖啡配色方案 */
+            --bg-color: #d7c9b4;     /* 整個大背景：深奶茶色 */
+            --header-bg: #4e342e;    /* 標頭：濃縮咖啡色 */
+            --header-text: #ffffff;  /* 標頭文字：純白 */
+            --container-bg: #fdfaf5; /* 容器底色：燕麥奶油色 */
+            --card-bg: #ffffff;     /* 卡片底色：白 */
+            --card-border: #bcaaa4; /* 卡片邊框：淺可可色 */
+            --text-main: #3e2723;   /* 主文字：深烘焙咖啡色 */
+            --text-date: #8d6e63;   /* 日期文字：拿鐵棕 */
+            --accent: #e0d5c1;      /* 懸停變色：奶泡色 */
+            --hover-border: #8d6e63; /* 懸停邊框：中性棕 */
         }
         
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
-        /* 頂部 Welcome 區域 */
+        /* 儀表板主容器 */
         .main-container {
             width: 90%;
-            max-width: 600px; /* 控制整體寬度，符合草圖的緊湊感 */
-            background: white;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(93, 64, 55, 0.08); /* 淡淡的大地色陰影 */
-            margin: 40px auto;
+            max-width: 600px;
+            background: var(--container-bg);
+            border-radius: 35px; /* 更圓潤的現代感 */
+            box-shadow: 0 25px 50px rgba(62, 39, 35, 0.2); /* 深色調陰影 */
+            margin: 60px auto;
             overflow: hidden;
-            border: 1px solid var(--card-border);
+            border: 1px solid rgba(255, 255, 255, 0.3); /* 隱約的高光邊框 */
         }
 
         .header {
             background-color: var(--header-bg);
             color: var(--header-text);
-            padding: 30px 20px;
+            padding: 45px 20px;
             text-align: center;
-            border-bottom: 2px solid var(--card-border);
+            letter-spacing: 2px;
         }
 
         .header h1 {
             margin: 0;
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
+            text-transform: uppercase;
         }
 
         /* 卡片網格區域 */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 兩列 */
-            gap: 20px; /* 卡片間距 */
-            padding: 40px; /* 內縮 */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            padding: 40px;
         }
 
-        /* 可點擊的卡片樣式 */
+        /* 卡片樣式 */
         .project-card {
             background: var(--card-bg);
-            border: 2px solid var(--card-border); /* 符合草圖的粗邊線感 */
-            border-radius: 20px;
+            border: 2px solid var(--card-border);
+            border-radius: 24px;
             padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            aspect-ratio: 1 / 1; /* 保持正方形 */
+            aspect-ratio: 1 / 1;
             cursor: pointer;
-            text-decoration: none; /* 去除超連結下劃線 */
-            transition: all 0.3s ease; /* 變色的過渡效果 */
-            box-sizing: border-box; /* 確保 padding 不影響尺寸 */
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 彈性動畫 */
+            box-sizing: border-box;
         }
 
-        /* 滑鼠懸停時的變色效果 (變色、微陰影) */
+        /* 滑鼠懸停效果 */
         .project-card:hover {
-            background-color: var(--accent); /* 卡片變色 */
-            border-color: var(--hover-border); /* 邊框變色 */
-            transform: translateY(-3px); /* 向上微浮動，增加互動感 */
-            box-shadow: 0 5px 15px rgba(141, 110, 99, 0.2);
+            background-color: var(--accent);
+            border-color: var(--hover-border);
+            transform: translateY(-8px) scale(1.02); /* 向上浮動並稍微放大 */
+            box-shadow: 0 10px 20px rgba(93, 64, 55, 0.15);
         }
 
         .project-title {
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 800;
+            font-size: 1.15rem;
             color: var(--text-main);
             margin-bottom: 8px;
         }
 
         .update-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-date);
             font-weight: 400;
             margin: 2px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .update-date {
             font-size: 0.85rem;
             color: var(--text-date);
-            font-weight: 600; /* 日期加粗 */
+            font-weight: 700;
         }
 
-        /* 手機版優化 */
+        /* 手機版適應 */
         @media (max-width: 500px) {
-            .card-grid {
-                padding: 20px;
-                gap: 15px;
-            }
-            .header h1 { font-size: 1.5rem; }
-            .project-title { font-size: 1rem; }
+            .main-container { margin: 30px auto; }
+            .card-grid { padding: 25px; gap: 18px; }
+            .header { padding: 35px 20px; }
+            .header h1 { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -127,31 +131,31 @@
     <div class="card-grid">
         <a href="###" class="project-card">
             <div class="project-title">Hacking Note</div>
-            <div class="update-label">Last Update:</div>
-            <div class="update-date">dd/mm/yyyy</div>
+            <div class="update-label">Last Update</div>
+            <div class="update-date">13/04/2026</div>
         </a>
 
         <a href="###" class="project-card">
             <div class="project-title">Side Project</div>
-            <div class="update-label">Last Update:</div>
+            <div class="update-label">Last Update</div>
             <div class="update-date">dd/mm/yyyy</div>
         </a>
 
         <a href="###" class="project-card">
             <div class="project-title">Small Project</div>
-            <div class="update-label">Last Update:</div>
+            <div class="update-label">Last Update</div>
             <div class="update-date">dd/mm/yyyy</div>
         </a>
 
         <a href="###" class="project-card">
             <div class="project-title">Packet Project</div>
-            <div class="update-label">Last Update:</div>
+            <div class="update-label">Last Update</div>
             <div class="update-date">dd/mm/yyyy</div>
         </a>
 
         <a href="###" class="project-card">
             <div class="project-title">Work</div>
-            <div class="update-label">Last Update:</div>
+            <div class="update-label">Last Update</div>
             <div class="update-date">dd/mm/yyyy</div>
         </a>
 
