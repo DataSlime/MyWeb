@@ -162,25 +162,6 @@
             line-height: 1.6;
         }
 
-        /* 返回按鈕 */
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: var(--header-bg);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 700;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            z-index: 100;
-        }
-
-        .back-btn:hover { transform: translateX(-5px); background-color: #3e2723; }
-
         @media (max-width: 768px) {
             .resume-container { flex-direction: column; margin: 20px auto; }
             .sidebar, .main-content { width: 100%; box-sizing: border-box; }
@@ -191,14 +172,12 @@
 </head>
 <body>
 
-<a href="index.html" class="back-btn">&larr; Back to Dashboard</a>
-
 <div class="resume-container">
     <div class="sidebar">
         <div class="section-title-left">Contact</div>
         <ul class="contact-list">
             <li><strong>Email</strong>mech_inf_cm33@icloud.com</li>
-            <li><strong>Git</strong><a href="index.html" style="color: inherit; text-decoration: none;">github.com/dataslime</a></li>
+            <li><strong>GitHub</strong><a href="index.html" style="color: inherit; text-decoration: none;">github.com/dataslime</a></li>
         </ul>
 
         <br>
@@ -206,44 +185,20 @@
         <div class="section-title-left">Languages</div>
         <ul class="skill-list">
             <li>Kotlin (Android)</li>
-            <li>Swift (iOS)</li>
             <li>Flutter</li>
             <li>Python</li>
-            <li>C++ / C</li>
-            <li>SQL</li>
+            <li>C++</li>
         </ul>
         
-        <br>
-
-        <div class="section-title-left">Expertise</div>
-        <ul class="skill-list">
-            <li>Cybersecurity Note</li>
-            <li>Packet Analysis</li>
-            <li>Linux Admin</li>
-            <li>Docker</li>
-        </ul>
     </div>
 
     <div class="main-content">
         <div class="main-header">
             <h1>DATASLIME</h1>
-            <p>資訊工程系 | Mobile App & Cybersecurity Enthusiast</p>
+            <p>資訊工程系 | Computer Science</p>
         </div>
 
         <div class="section-title-right">工作經驗</div>
-        
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <h3 class="entry-title">Junior Developer</h3>
-                    <p class="entry-subtitle">Tech Company Name</p>
-                </div>
-                <span class="entry-date">2026 - Present</span>
-            </div>
-            <p class="entry-content">
-                負責 Android App 新功能開發與維護，使用 Kotlin 語言。優化 API 回傳資料處理流程，提升 App 啟動速度 15%。
-            </p>
-        </div>
 
         <div class="entry">
             <div class="entry-header">
@@ -253,15 +208,14 @@
                 </div>
                 <span class="entry-date">20xx - 20xx</span>
             </div>
-            </div>
+        </div>
 
         <div class="section-title-right">學校經驗</div>
         
         <div class="entry">
             <div class="entry-header">
                 <div>
-                    <h3 class="entry-title">資訊工程學系</h3>
-                    <p class="entry-subtitle">私立大學</p>
+                    <h3 class="entry-title">教授 CTF 伺服器維護 - 前端</h3>
                 </div>
             </div>
         </div>
