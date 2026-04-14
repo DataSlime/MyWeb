@@ -1,1 +1,1 @@
-https://dataslime.github.io/resume/
+https://dataslime.github.io/
